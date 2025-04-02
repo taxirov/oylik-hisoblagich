@@ -3,69 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPI Hisoblagich</title>
+    <title>KPI Hisoblagich V2</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 p-6">
-    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">KPI Hisoblagich</h2>
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8 text-indigo-700">KPI Hisoblagich V2</h2>
 
-        <div class="grid grid-cols-2 gap-4 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div>
-                <label class="block font-semibold mb-2">Oyliq ish kuni:</label>
-                <input type="number" id="workDays" value="22" class="border p-2 w-full" oninput="calculatePlan()">
+                <label class="block font-medium text-gray-700 mb-2">Oylik ish kuni:</label>
+                <input type="number" id="workDays" value="22" class="border p-3 rounded-md w-full focus:ring focus:ring-indigo-200" oninput="calculatePlan()">
             </div>
             <div>
-                <label class="block font-semibold mb-2">KPI Summasi (so'm):</label>
-                <input type="number" id="kpiInput" value="4000000" class="border p-2 w-full" oninput="calculateKPI()">
+                <label class="block font-medium text-gray-700 mb-2">KPI Summasi (so'm):</label>
+                <input type="number" id="kpiInput" value="4000000" class="border p-3 rounded-md w-full focus:ring focus:ring-indigo-200" oninput="calculateKPI()">
             </div>
         </div>
 
-        <table class="w-full border-collapse border text-center">
-            <thead class="bg-gray-200">
-                <tr>
-                    <th class="border p-2">Ko'rsatkich</th>
-                    <th class="border p-2">Reja</th>
-                    <th class="border p-2">Fakt</th>
-                    <th class="border p-2">Samaradorlik (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="border p-2">Nashr qilish</td>
-                    <td class="border p-2" id="plan1">0</td>
-                    <td class="border p-2"><input type="number" id="fact1" class="border p-2 w-full" oninput="calculateKPI()"></td>
-                    <td class="border p-2" id="percent1">0%</td>
-                </tr>
-                <tr>
-                    <td class="border p-2">Analog qo'shish</td>
-                    <td class="border p-2" id="plan2">0</td>
-                    <td class="border p-2"><input type="number" id="fact2" class="border p-2 w-full" oninput="calculateKPI()"></td>
-                    <td class="border p-2" id="percent2">0%</td>
-                </tr>
-                <tr>
-                    <td class="border p-2">Dars o'tish (daqiqa)</td>
-                    <td class="border p-2" id="plan3">0</td>
-                    <td class="border p-2"><input type="number" id="fact3" class="border p-2 w-full" oninput="calculateKPI()"></td>
-                    <td class="border p-2" id="percent3">0%</td>
-                </tr>
-                <tr class="bg-gray-200 font-bold">
-                    <td class="border p-2">Jami</td>
-                    <td class="border p-2">100%</td>
-                    <td class="border p-2" id="totalFact">0</td>
-                    <td class="border p-2" id="totalPercent">0%</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300 rounded-lg shadow-md">
+                <thead class="bg-indigo-100">
+                    <tr>
+                        <th class="border p-3 font-semibold text-indigo-700">Ko'rsatkich</th>
+                        <th class="border p-3 font-semibold text-indigo-700">Reja</th>
+                        <th class="border p-3 font-semibold text-indigo-700">Fakt</th>
+                        <th class="border p-3 font-semibold text-indigo-700">Samaradorlik (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-3 text-gray-700">Nashr qilish</td>
+                        <td class="border p-3 text-center text-gray-700" id="plan1">0</td>
+                        <td class="border p-3">
+                            <input type="number" id="fact1" class="border p-2 rounded-md w-full focus:ring focus:ring-indigo-200" oninput="calculateKPI()">
+                        </td>
+                        <td class="border p-3 text-center text-gray-700" id="percent1">0%</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-3 text-gray-700">Analog qo'shish</td>
+                        <td class="border p-3 text-center text-gray-700" id="plan2">0</td>
+                        <td class="border p-3">
+                            <input type="number" id="fact2" class="border p-2 rounded-md w-full focus:ring focus:ring-indigo-200" oninput="calculateKPI()">
+                        </td>
+                        <td class="border p-3 text-center text-gray-700" id="percent2">0%</td>
+                    </tr>
+                    <tr>
+                        <td class="border p-3 text-gray-700">Dars o'tish (daqiqa)</td>
+                        <td class="border p-3 text-center text-gray-700" id="plan3">0</td>
+                        <td class="border p-3">
+                            <input type="number" id="fact3" class="border p-2 rounded-md w-full focus:ring focus:ring-indigo-200" oninput="calculateKPI()">
+                        </td>
+                        <td class="border p-3 text-center text-gray-700" id="percent3">0%</td>
+                    </tr>
+                    <tr class="bg-indigo-100 font-semibold">
+                        <td class="border p-3 text-indigo-700">Jami</td>
+                        <td class="border p-3 text-center text-indigo-700">100%</td>
+                        <td class="border p-3 text-center text-indigo-700" id="totalFact">0</td>
+                        <td class="border p-3 text-center text-indigo-700" id="totalPercent">0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <h3 class="text-xl font-bold mt-4">KPI Summa: <span id="totalKPI">4,000,000</span> so'm</h3>
+        <h3 class="text-2xl font-semibold mt-8 text-indigo-700">KPI Summa: <span id="totalKPI" class="font-bold text-indigo-800">4,000,000</span> so'm</h3>
     </div>
 
     <script>
         function calculatePlan() {
             let workDays = parseInt(document.getElementById("workDays").value) || 0;
             document.getElementById("plan1").innerText = workDays * 60;
-            document.getElementById("plan2").innerText = workDays * 20;
+            document.getElementById("plan2").innerText = workDays * 18; // 20 o'rniga 18
             document.getElementById("plan3").innerText = workDays * 480;
             calculateKPI();
         }
@@ -88,7 +102,7 @@
             document.getElementById("percent3").innerText = percent3.toFixed(2) + "%";
 
             let totalFact = fact1 + fact2 + fact3;
-            let totalPercent = percent1 + percent2 + percent3; // O'rtacha emas, yig'indisi
+            let totalPercent = percent1 + percent2 + percent3;
 
             document.getElementById("totalFact").innerText = totalFact;
             document.getElementById("totalPercent").innerText = totalPercent.toFixed(1) + "%";
