@@ -62,6 +62,14 @@
                         </td>
                         <td class="border p-3 text-center text-gray-700" id="percent3">0%</td>
                     </tr>
+                    <tr>
+                        <td class="border p-3 text-gray-700">Nashr qilish (60)</td>
+                        <td class="border p-3 text-center text-gray-700" id="plan4">0</td>
+                        <td class="border p-3">
+                            <input type="number" id="fact4" class="border p-2 rounded-md w-full focus:ring focus:ring-indigo-200" oninput="calculateKPI()">
+                        </td>
+                        <td class="border p-3 text-center text-gray-700" id="percent4">0%</td>
+                    </tr>
                     <tr class="bg-indigo-100 font-semibold">
                         <td class="border p-3 text-indigo-700">Jami</td>
                         <td class="border p-3 text-center text-indigo-700">100%</td>
@@ -79,8 +87,9 @@
         function calculatePlan() {
             let workDays = parseInt(document.getElementById("workDays").value) || 0;
             document.getElementById("plan1").innerText = workDays * 90;
-            document.getElementById("plan2").innerText = workDays * 18; // 20 o'rniga 18
+            document.getElementById("plan2").innerText = workDays * 18;
             document.getElementById("plan3").innerText = workDays * 480;
+            document.getElementById("plan4").innerText = workDays * 60;
             calculateKPI();
         }
 
@@ -88,21 +97,25 @@
             let plan1 = parseInt(document.getElementById("plan1").innerText) || 1;
             let plan2 = parseInt(document.getElementById("plan2").innerText) || 1;
             let plan3 = parseInt(document.getElementById("plan3").innerText) || 1;
-            
+            let plan4 = parseInt(document.getElementById("plan4").innerText) || 1;
+
             let fact1 = parseInt(document.getElementById("fact1").value) || 0;
             let fact2 = parseInt(document.getElementById("fact2").value) || 0;
             let fact3 = parseInt(document.getElementById("fact3").value) || 0;
+            let fact4 = parseInt(document.getElementById("fact4").value) || 0;
 
             let percent1 = (fact1 / plan1) * 100;
             let percent2 = (fact2 / plan2) * 100;
             let percent3 = (fact3 / plan3) * 100;
+            let percent4 = (fact4 / plan4) * 100;
 
             document.getElementById("percent1").innerText = percent1.toFixed(2) + "%";
             document.getElementById("percent2").innerText = percent2.toFixed(2) + "%";
             document.getElementById("percent3").innerText = percent3.toFixed(2) + "%";
+            document.getElementById("percent4").innerText = percent4.toFixed(2) + "%";
 
-            let totalFact = fact1 + fact2 + fact3;
-            let totalPercent = percent1 + percent2 + percent3;
+            let totalFact = fact1 + fact2 + fact3 + fact4;
+            let totalPercent = percent1 + percent2 + percent3 + percent4;
 
             document.getElementById("totalFact").innerText = totalFact;
             document.getElementById("totalPercent").innerText = totalPercent.toFixed(1) + "%";
