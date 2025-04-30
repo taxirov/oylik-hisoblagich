@@ -137,7 +137,7 @@
                 </thead>
                 <tbody class="kpi-tbody">
                     <tr>
-                        <td class="kpi-td">Analog tekshirish (90)</td>
+                        <td class="kpi-td">Analog tekshirish (105)</td>
                         <td class="kpi-td text-center" id="plan1">0</td>
                         <td class="kpi-td">
                             <input type="number" id="fact1" class="kpi-input" oninput="calculateKPI()">
@@ -184,7 +184,7 @@
     <script>
         function calculatePlan() {
             let workDays = parseInt(document.getElementById("workDays").value) || 0;
-            document.getElementById("plan1").innerText = workDays * 90;
+            document.getElementById("plan1").innerText = workDays * 105;
             document.getElementById("plan2").innerText = workDays * 18;
             document.getElementById("plan3").innerText = workDays * 480;
             document.getElementById("plan4").innerText = workDays * 60;
