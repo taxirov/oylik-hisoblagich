@@ -9,92 +9,93 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            color: #374151;
+            background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+            color: #1f2937;
             margin: 0;
             padding: 20px;
             min-height: 100vh;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
         }
         .header {
-            color: #08CB00;
-            margin-bottom: 32px;
+            color: #4f46e5;
+            margin-bottom: 40px;
             text-align: center;
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .header span {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .input-group {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 24px;
         }
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
             .input-group {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        @media (min-width: 1024px) {
-            .input-group {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
         .input-card {
             background: #f9fafb;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 14px;
+            padding: 22px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
         }
         .input-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            background: #f3f4f6;
+            border-color: #c7d2fe;
+            box-shadow: 0 6px 15px rgba(99,102,241,0.15);
+            transform: translateY(-2px);
         }
         .label {
             display: block;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #6b7280;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #374151;
             font-size: 1rem;
         }
         .input {
             width: 100%;
             padding: 14px;
-            border: 2px solid #d1d5db;
+            border: 2px solid #e5e7eb;
             border-radius: 10px;
             font-size: 1rem;
-            box-sizing: border-box;
-            transition: all 0.2s ease-in-out;
-            font-family: 'Nunito', sans-serif;
+            transition: all 0.2s ease;
         }
         .input:focus {
-            border-color: #4c51bf;
+            border-color: #6366f1;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.2);
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.2);
         }
         .table-wrapper {
             overflow-x: auto;
-            margin-bottom: 30px;
-            border-radius: 12px;
+            margin-bottom: 35px;
+            border-radius: 14px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
         }
         .kpi-table {
             width: 100%;
             border-collapse: collapse;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
         }
         .kpi-thead {
-            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
             color: #fff;
         }
         .kpi-th {
@@ -104,10 +105,11 @@
             font-size: 1rem;
         }
         .kpi-tbody tr:nth-child(even) {
-            background-color: rgba(8, 203, 0, 0.08);
+            background-color: #f9fafb;
         }
         .kpi-tbody tr:hover {
-            background-color: rgba(8, 203, 0, 0.05);
+            background-color: #eef2ff;
+            transition: background 0.3s ease;
         }
         .kpi-td {
             padding: 16px;
@@ -115,70 +117,42 @@
             font-size: 0.95rem;
         }
         .kpi-input {
-            width: 90px;
+            width: 100px;
             padding: 10px;
             border: 2px solid #d1d5db;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 0.95rem;
             text-align: center;
-            box-sizing: border-box;
-            transition: all 0.2s ease-in-out;
-            font-family: 'Nunito', sans-serif;
+            transition: all 0.2s ease;
             font-weight: 600;
         }
         .kpi-input:focus {
-            border-color: #4c51bf;
+            border-color: #3b82f6;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(76, 81, 191, 0.2);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
         }
         .total-kpi {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: #4c51bf;
+            color: #1e40af;
             margin-top: 35px;
             text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 2px solid #e0e7ff;
+            padding: 25px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            border: 2px solid #bfdbfe;
         }
         .total-kpi span {
-            color: #08CB00;
-            font-size: 1.8rem;
-        }
-        
-        /* Yangi qo'shimchalar */
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px 15px;
-                width: 95%;
-                margin: 10px auto;
-            }
-            .header {
-                font-size: 1.8rem;
-                margin-bottom: 25px;
-            }
-            .kpi-th, .kpi-td {
-                padding: 12px 14px;
-            }
-            .kpi-input {
-                width: 80px;
-            }
-        }
-        
-        .calculator-icon {
-            display: inline-block;
-            margin-right: 10px;
-            font-size: 1.8rem;
-            vertical-align: middle;
+            color: #16a34a;
+            font-size: 1.9rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="header">
-            <span class="calculator-icon">🧮</span>KPI Hisoblagich V4
+            <span>🧮 KPI Hisoblagich V4</span>
         </h1>
 
         <div class="input-group">
@@ -206,41 +180,31 @@
                     <tr>
                         <td class="kpi-td">Analog tekshirish (105)</td>
                         <td class="kpi-td text-center" id="plan1">0</td>
-                        <td class="kpi-td">
-                            <input type="number" id="fact1" class="kpi-input" oninput="calculateKPI()">
-                        </td>
+                        <td class="kpi-td"><input type="number" id="fact1" class="kpi-input" oninput="calculateKPI()"></td>
                         <td class="kpi-td text-center" id="percent1">0%</td>
                     </tr>
                     <tr>
                         <td class="kpi-td">Analog qo'shish (18)</td>
                         <td class="kpi-td text-center" id="plan2">0</td>
-                        <td class="kpi-td">
-                            <input type="number" id="fact2" class="kpi-input" oninput="calculateKPI()">
-                        </td>
+                        <td class="kpi-td"><input type="number" id="fact2" class="kpi-input" oninput="calculateKPI()"></td>
                         <td class="kpi-td text-center" id="percent2">0%</td>
                     </tr>
                     <tr>
                         <td class="kpi-td">Dars o'tish (240 daqiqa)</td>
                         <td class="kpi-td text-center" id="plan3">0</td>
-                        <td class="kpi-td">
-                            <input type="number" id="fact3" class="kpi-input" oninput="calculateKPI()">
-                        </td>
+                        <td class="kpi-td"><input type="number" id="fact3" class="kpi-input" oninput="calculateKPI()"></td>
                         <td class="kpi-td text-center" id="percent3">0%</td>
                     </tr>
                     <tr>
                         <td class="kpi-td">Nashr qilish (60)</td>
                         <td class="kpi-td text-center" id="plan4">0</td>
-                        <td class="kpi-td">
-                            <input type="number" id="fact4" class="kpi-input" oninput="calculateKPI()">
-                        </td>
+                        <td class="kpi-td"><input type="number" id="fact4" class="kpi-input" oninput="calculateKPI()"></td>
                         <td class="kpi-td text-center" id="percent4">0%</td>
                     </tr>
                     <tr>
                         <td class="kpi-td">Eski analog (350 ta)</td>
                         <td class="kpi-td text-center" id="plan5">0</td>
-                        <td class="kpi-td">
-                            <input type="number" id="fact5" class="kpi-input" oninput="calculateKPI()">
-                        </td>
+                        <td class="kpi-td"><input type="number" id="fact5" class="kpi-input" oninput="calculateKPI()"></td>
                         <td class="kpi-td text-center" id="percent5">0%</td>
                     </tr>
                     <tr class="bg-gray-100 font-semibold">
@@ -256,6 +220,7 @@
         <h3 class="total-kpi">KPI Summa: <span id="totalKPI">4,000,000</span> so'm</h3>
     </div>
 
+    <!-- ❗ JavaScript qismini o'zgartirmadim -->
     <script>
         function calculatePlan() {
             let workDays = parseInt(document.getElementById("workDays").value) || 0;
