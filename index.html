@@ -5,169 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KPI Hisoblagich V4</title>
     <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color: #f3f4f6;
-        color: #374151;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        padding: 30px;
-        margin: 20px auto;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .header {
-        color: #08CB00;
-        margin-bottom: 24px;
-        text-align: center;
-        font-size: 1.8rem;
-        font-weight: 700;
-    }
-    .input-group {
-        margin-bottom: 20px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    @media (min-width: 640px) {
-        .input-group {
-            grid-template-columns: repeat(2, 1fr);
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #374151;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
         }
-    }
-    @media (min-width: 1024px) {
-        .input-group {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    .label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #6b7280;
-        font-size: 0.95rem;
-    }
-    .input {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        font-size: 1rem;
-        box-sizing: border-box;
-        transition: all 0.2s ease-in-out;
-        font-family: 'Nunito', sans-serif;
-    }
-    .input:focus {
-        border-color: #4c51bf;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.2);
-    }
-    .table-wrapper {
-        overflow-x: auto;
-        margin-bottom: 24px;
-        border-radius: 8px;
-        border: 1px solid #e5e7eb;
-    }
-    .kpi-table {
-        width: 100%;
-        border-collapse: collapse;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        min-width: 600px;
-    }
-    .kpi-thead {
-        background-color: #4c51bf;
-        color: #fff;
-    }
-    .kpi-th {
-        padding: 16px;
-        text-align: left;
-        font-weight: 600;
-        font-size: 0.95rem;
-    }
-    .kpi-tbody tr:nth-child(even) {
-        background-color: rgba(8, 203, 0, 0.1);
-    }
-    .kpi-tbody tr:hover {
-        background-color: rgba(8, 203, 0, 0.05);
-    }
-    .kpi-td {
-        padding: 12px 16px;
-        border-bottom: 1px solid #e5e7eb;
-        font-size: 0.9rem;
-    }
-    .kpi-input {
-        width: 80px;
-        padding: 8px;
-        border: 1px solid #d1d5db;
-        border-radius: 6px;
-        font-size: 0.9rem;
-        text-align: center;
-        box-sizing: border-box;
-        transition: all 0.2s ease-in-out;
-        font-family: 'Nunito', sans-serif;
-    }
-    .kpi-input:focus {
-        border-color: #4c51bf;
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(76, 81, 191, 0.2);
-    }
-    .total-kpi {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #4c51bf;
-        margin-top: 30px;
-        text-align: center;
-        padding: 15px;
-        background-color: rgba(76, 81, 191, 0.05);
-        border-radius: 8px;
-    }
-    .total-kpi span {
-        color: #7c3aed;
-    }
-    
-    /* Yangi qo'shimchalar */
-    @media (max-width: 480px) {
         .container {
-            padding: 20px 15px;
-            width: 95%;
-            margin: 10px auto;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         .header {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: #08CB00;
+            margin-bottom: 32px;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
-        .kpi-th, .kpi-td {
-            padding: 10px 12px;
+        .input-group {
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 640px) {
+            .input-group {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .input-group {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .input-card {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .input-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        .label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #6b7280;
+            font-size: 1rem;
+        }
+        .input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            font-family: 'Nunito', sans-serif;
+        }
+        .input:focus {
+            border-color: #4c51bf;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.2);
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+        .kpi-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .kpi-thead {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: #fff;
+        }
+        .kpi-th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .kpi-tbody tr:nth-child(even) {
+            background-color: rgba(8, 203, 0, 0.08);
+        }
+        .kpi-tbody tr:hover {
+            background-color: rgba(8, 203, 0, 0.05);
+        }
+        .kpi-td {
+            padding: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 0.95rem;
         }
         .kpi-input {
-            width: 70px;
+            width: 90px;
+            padding: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            text-align: center;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
         }
-    }
-</style>
-    
+        .kpi-input:focus {
+            border-color: #4c51bf;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(76, 81, 191, 0.2);
+        }
+        .total-kpi {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #4c51bf;
+            margin-top: 35px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid #e0e7ff;
+        }
+        .total-kpi span {
+            color: #08CB00;
+            font-size: 1.8rem;
+        }
+        
+        /* Yangi qo'shimchalar */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+                width: 95%;
+                margin: 10px auto;
+            }
+            .header {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            .kpi-th, .kpi-td {
+                padding: 12px 14px;
+            }
+            .kpi-input {
+                width: 80px;
+            }
+        }
+        
+        .calculator-icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h2 class="header text-3xl font-bold">KPI Hisoblagich V4</h2>
+        <h1 class="header">
+            <span class="calculator-icon">🧮</span>KPI Hisoblagich V4
+        </h1>
 
         <div class="input-group">
-            <div>
+            <div class="input-card">
                 <label for="workDays" class="label">Oylik ish kuni:</label>
                 <input type="number" id="workDays" value="22" class="input" oninput="calculatePlan()">
             </div>
-            <div>
+            <div class="input-card">
                 <label for="kpiInput" class="label">KPI Summasi (so'm):</label>
                 <input type="number" id="kpiInput" value="4000000" class="input" oninput="calculateKPI()">
             </div>
@@ -295,8 +314,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
